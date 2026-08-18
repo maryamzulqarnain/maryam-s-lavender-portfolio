@@ -3,7 +3,7 @@
  * Edit anything here — no need to touch component files.
  */
 import cvAsset from "@/assets/cv.asset.json";
-import bcgmatrixImage from "@/assets/bcg-matrix.png";
+import bcgmatrixImage from "@/assets/bcg-matrix-test.png";
 export const profile = {
   name: "Maryam Zulqarnain",
   role: "Business & Information Technology Student",
