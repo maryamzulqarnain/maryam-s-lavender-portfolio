@@ -12,7 +12,7 @@ export function About() {
             </p>
           ))}
         </div>
-        <ul className="grid grid-cols-2 gap-4" data-reveal>
+        <ul className="grid grid-cols-2 content-start gap-4 self-start" data-reveal>
           {about.highlights.map((h) => (
             <li
               key={h.label}
