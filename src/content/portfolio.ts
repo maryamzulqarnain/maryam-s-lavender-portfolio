@@ -3,7 +3,7 @@
  * Edit anything here — no need to touch component files.
  */
 import cvAsset from "@/assets/cv.asset.json";
-
+import bcgmatrixImage from "@/assets/bcg-matrix.png";
 export const profile = {
   name: "Maryam Zulqarnain",
   role: "Business & Information Technology Student",
@@ -85,6 +85,14 @@ export const experiences: Experience[] = [
       "Active participant in literary events, debates and intellectual discourse — a steady space to practise public speaking, argument and storytelling.",
     skills: ["Public Speaking", "Debate", "Storytelling"],
   },
+   {
+    role: "Member",
+    org: "Talash Literary Society",
+    date: "Ongoing",
+    description:
+      "Active participant in literary events, debates and intellectual discourse — a steady space to practise public speaking, argument and storytelling.",
+    skills: ["Public Speaking", "Debate", "Storytelling"],
+  }
 ];
 
 export type Project = {
@@ -111,6 +119,7 @@ export const projects: Project[] = [
       "A local services marketplace concept built out end to end: business model, value proposition, target market segmentation and a go-to-market strategy for early adopters.",
     tools: ["Business Model", "Value Proposition", "Segmentation", "Go-to-Market"],
     visual: "strategy",
+    image: bcgmatrixImage,
     featured: true,
   },
   {
@@ -121,6 +130,7 @@ export const projects: Project[] = [
       "Strategic analysis of Engro Foods' product portfolio using the BCG Matrix framework, mapping products across growth and market share to draw investment implications.",
     tools: ["BCG Matrix", "MS Excel", "Brand Analysis"],
     visual: "matrix",
+    image: bcgmatrixImage,
     featured: true,
   },
   {
