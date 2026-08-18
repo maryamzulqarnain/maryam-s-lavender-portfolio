@@ -16,7 +16,7 @@ export const profile = {
   availability: "Open to Opportunities",
   tagline: "Business, Marketing & Strategy — with a creative edge.",
   heroIntro:
-    "I'm a Business & Information Technology student at Punjab University, working at the intersection of marketing, strategy and technology — turning consumer insight and research into ideas that hold up in the real world.",
+    "I'm a Business & Information Technology student at Punjab University, working at the intersection of marketing, strategy and technology , turning consumer insight and research into ideas that hold up in the real world.",
 };
 
 export const navLinks = [
