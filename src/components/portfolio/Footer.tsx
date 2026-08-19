@@ -16,14 +16,14 @@ export function Footer() {
             href={profile.linkedin}
             target="_blank"
             rel="noreferrer"
-            aria-label="LinkedIn profile"
+            aria-label={`Open ${profile.name}'s LinkedIn profile in a new tab`}
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-primary transition-colors hover:bg-secondary"
           >
             <Linkedin className="h-5 w-5" aria-hidden="true" />
           </a>
           <a
             href={`mailto:${profile.email}`}
-            aria-label={`Email ${profile.name}`}
+            aria-label={`Send an email to ${profile.email}`}
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-primary transition-colors hover:bg-secondary"
           >
             <Mail className="h-5 w-5" aria-hidden="true" />

@@ -1,7 +1,11 @@
-import { Mail, Linkedin, ArrowRight } from "lucide-react";
+import { Mail, Linkedin, MapPin, ArrowRight } from "lucide-react";
 import { contact, profile } from "@/content/portfolio";
+import { DownloadCvLink } from "@/components/portfolio/DownloadCvLink";
 
 export function Contact() {
+  const locationQuery = encodeURIComponent(profile.location);
+  const mapsHref = `https://www.google.com/maps/search/?api=1&query=${locationQuery}`;
+
   return (
     <section id="contact" className="scroll-mt-24 px-5 py-20 sm:px-8 md:py-28">
       <div
@@ -19,7 +23,8 @@ export function Contact() {
         <div className="mx-auto mt-10 grid max-w-2xl gap-4 sm:grid-cols-2">
           <a
             href={`mailto:${profile.email}`}
-            className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card px-5 py-4 text-left transition-all hover:-translate-y-0.5 hover:shadow-lift"
+            aria-label={`Send an email to ${profile.email}`}
+            className="card-hover flex items-center gap-3 rounded-2xl border border-border/70 bg-card px-5 py-4 text-left"
           >
             <Mail className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
             <span className="min-w-0">
@@ -35,7 +40,8 @@ export function Contact() {
             href={profile.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card px-5 py-4 text-left transition-all hover:-translate-y-0.5 hover:shadow-lift"
+            aria-label={`Open ${profile.name}'s LinkedIn profile in a new tab`}
+            className="card-hover flex items-center gap-3 rounded-2xl border border-border/70 bg-card px-5 py-4 text-left"
           >
             <Linkedin className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
             <span className="min-w-0">
@@ -47,11 +53,32 @@ export function Contact() {
               </span>
             </span>
           </a>
+          <a
+            href={mapsHref}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Open ${profile.location} in Google Maps`}
+            className="card-hover flex items-center gap-3 rounded-2xl border border-border/70 bg-card px-5 py-4 text-left"
+          >
+            <MapPin className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+            <span className="min-w-0">
+              <span className="block text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                Location
+              </span>
+              <span className="block truncate text-sm font-medium text-foreground">
+                {profile.location}
+              </span>
+            </span>
+          </a>
+          <DownloadCvLink
+            className="card-hover flex items-center gap-3 rounded-2xl border border-border/70 bg-card px-5 py-4 text-left"
+            label="Download resume"
+          />
         </div>
 
         <a
           href={`mailto:${profile.email}`}
-          className="mt-10 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-lift sm:w-auto"
+          className="button-hover mt-10 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-soft sm:w-auto"
         >
           Get in Touch
           <ArrowRight className="h-4 w-4" aria-hidden="true" />

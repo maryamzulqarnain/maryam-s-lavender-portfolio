@@ -10,7 +10,7 @@ export function Education() {
           <li
             key={item.degree}
             data-reveal
-            className="rounded-3xl border border-border/70 bg-card p-6 shadow-soft sm:p-7"
+            className="card-hover rounded-3xl border border-border/70 bg-card p-6 shadow-soft sm:p-7"
           >
             <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-4">
               <div className="flex min-w-0 items-start gap-4">

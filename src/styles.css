@@ -64,6 +64,7 @@
   --color-lavender: var(--lavender);
   --color-lavender-soft: var(--lavender-soft);
   --color-plum: var(--plum);
+  --color-dusty-rose: var(--dusty-rose);
 }
 
 :root {
@@ -91,6 +92,7 @@
   --lavender: oklch(0.83 0.06 300);
   --lavender-soft: oklch(0.955 0.022 302);
   --plum: oklch(0.26 0.045 305);
+  --dusty-rose: oklch(0.72 0.08 15);
   --gradient-hero: linear-gradient(140deg, oklch(0.97 0.02 302), oklch(0.9 0.05 300) 55%, oklch(0.96 0.025 320));
   --gradient-accent: linear-gradient(120deg, oklch(0.6 0.12 300), oklch(0.72 0.09 315));
   --shadow-soft: 0 1px 2px oklch(0.4 0.06 305 / 0.04), 0 18px 40px -24px oklch(0.4 0.08 305 / 0.28);
@@ -155,6 +157,11 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(circle at 12% 18%, oklch(0.82 0.05 300 / 0.12) 0 1px, transparent 1.8px),
+      radial-gradient(circle at 78% 14%, oklch(0.72 0.08 15 / 0.12) 0 1px, transparent 1.8px),
+      radial-gradient(circle at 64% 74%, oklch(0.8 0.05 305 / 0.1) 0 1px, transparent 1.8px);
+    background-size: 320px 320px, 420px 420px, 260px 260px;
   }
 
   html {
@@ -190,6 +197,37 @@
   color: transparent;
 }
 
+.cosmic-surface {
+  position: relative;
+  isolation: isolate;
+}
+
+.cosmic-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image:
+    radial-gradient(circle at 20% 30%, white 0 1px, transparent 1.4px),
+    radial-gradient(circle at 70% 18%, white 0 1px, transparent 1.4px),
+    radial-gradient(circle at 84% 66%, white 0 1px, transparent 1.4px),
+    radial-gradient(circle at 34% 82%, white 0 1px, transparent 1.4px);
+  background-size: 240px 240px, 300px 300px, 360px 360px, 420px 420px;
+}
+
+.cosmic-surface::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: radial-gradient(circle, oklch(1 0 0 / 0.6) 0 0.7px, transparent 0.9px);
+  background-size: 14px 14px;
+}
+
 /* Scroll reveal */
 @utility reveal {
   opacity: 0;
@@ -216,6 +254,69 @@
 
 @utility animate-float {
   animation: float-slow 7s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@utility animate-twinkle {
+  animation: twinkle 6s ease-in-out infinite;
+}
+
+.card-hover {
+  transition:
+    transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 50px -28px oklch(0.42 0.08 305 / 0.42);
+  border-color: oklch(0.72 0.08 15 / 0.35);
+}
+
+.button-hover {
+  transition:
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.button-hover:hover {
+  transform: scale(1.025);
+  box-shadow: 0 18px 40px -24px oklch(0.56 0.1 300 / 0.45);
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+  width: 100%;
+  height: 1.5px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  background: linear-gradient(90deg, var(--dusty-rose), var(--primary));
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
 }
 
 @media (prefers-reduced-motion: reduce) {

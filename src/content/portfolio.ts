@@ -3,7 +3,13 @@
  * Edit anything here — no need to touch component files.
  */
 import cvAsset from "@/assets/cv.asset.json";
-import bcgmatrixImage from "@/assets/bcg-matrix-test.png";
+import hirefastImage from "@/assets/hirefast.png";
+import i2cImage from "@/assets/i2c.png";
+import johnsonImage from "@/assets/Screenshot 2026-08-19 030426.png";
+import imfImage from "@/assets/imf-cover.jpg";
+import podcastImage from "@/assets/podcast.png";
+import websiteImage from "@/assets/website.png";
+import bcgMatrixImage from "@/assets/bcg-matrix-test.png";
 export const profile = {
   name: "Maryam Zulqarnain",
   role: "Business & Information Technology Student",
@@ -54,9 +60,17 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
+  role: "Digital Marketing Intern",
+  org: "Devmine",
+  date: "Jul – Aug 2026",
+  description:
+    "Created and researched content for client social media accounts — from competitor analysis and copywriting to post design and growth strategy — using AI tools to speed up ideation and research.",
+  skills: ["Content Strategy", "Copywriting", "Meta Ads", "AI Tools"],
+},
+  {
     role: "Virtual Tech Intern",
     org: "IEUK — UK Government Programme",
-    date: "2024",
+    date: "2025",
     description:
       "Completed a competitive virtual internship focused on technology and innovation, with exposure to real-world tech industry workflows and structured problem-solving.",
     skills: ["Technology & Innovation", "Problem Solving", "Industry Workflows"],
@@ -64,27 +78,12 @@ export const experiences: Experience[] = [
   {
     role: "Job Simulations",
     org: "Lloyds Banking Group & Accenture",
-    date: "2024",
+    date: "2025",
     description:
       "Worked through industry job simulations covering banking operations and consulting frameworks, applying structured thinking to client-style business problems.",
     skills: ["Consulting Frameworks", "Banking Operations", "Business Analysis"],
   },
-  {
-    role: "Research Assistant",
-    org: "PhD Research Project",
-    date: "2023 – 2024",
-    description:
-      "Prepared and organised documentation and supporting materials for a doctoral research project, keeping sources and records accurate and easy to navigate.",
-    skills: ["Research & Analysis", "Documentation", "Attention to Detail"],
-  },
-  {
-    role: "Member",
-    org: "Talash Literary Society",
-    date: "Ongoing",
-    description:
-      "Active participant in literary events, debates and intellectual discourse — a steady space to practise public speaking, argument and storytelling.",
-    skills: ["Public Speaking", "Debate", "Storytelling"],
-  },
+ 
    {
     role: "Member",
     org: "Talash Literary Society",
@@ -105,6 +104,8 @@ export type Project = {
   visual: "strategy" | "matrix" | "slides" | "wireframe" | "website" | "research";
   /** Add an imported image here later to replace the abstract placeholder. */
   image?: string;
+  /** Control how the image sits inside the card. */
+  imageFit?: "cover" | "contain";
   /** Add a real URL to show a "View Project" button. Leave undefined for no button. */
   link?: string;
   featured?: boolean;
@@ -119,7 +120,7 @@ export const projects: Project[] = [
       "A local services marketplace concept built out end to end: business model, value proposition, target market segmentation and a go-to-market strategy for early adopters.",
     tools: ["Business Model", "Value Proposition", "Segmentation", "Go-to-Market"],
     visual: "strategy",
-    image: bcgmatrixImage,
+    image: hirefastImage,
     featured: true,
   },
   {
@@ -130,7 +131,8 @@ export const projects: Project[] = [
       "Strategic analysis of Engro Foods' product portfolio using the BCG Matrix framework, mapping products across growth and market share to draw investment implications.",
     tools: ["BCG Matrix", "MS Excel", "Brand Analysis"],
     visual: "matrix",
-    image: bcgmatrixImage,
+    image: bcgMatrixImage,
+    imageFit: "contain",
     featured: true,
   },
   {
@@ -141,6 +143,8 @@ export const projects: Project[] = [
       "Researched, built and presented a detailed business case study, translating company research into a clear narrative and a set of defensible takeaways.",
     tools: ["Case Analysis", "Research", "Presentation"],
     visual: "slides",
+    image: johnsonImage,
+    imageFit: "contain",
   },
   {
     name: "IMF & Global Economy Presentation",
@@ -150,6 +154,8 @@ export const projects: Project[] = [
       "Analysed the IMF's role in the global economy and delivered a formal presentation on its influence, instruments and criticisms.",
     tools: ["Macroeconomics", "Research", "Public Speaking"],
     visual: "research",
+    image: imfImage,
+    imageFit: "contain",
   },
   {
     name: "Mobile App UI & Podcast App Wireframing",
@@ -159,6 +165,8 @@ export const projects: Project[] = [
       "Designed a complete mobile application interface in Moqups, plus detailed wireframes and user flow diagrams for a podcast app.",
     tools: ["Figma", "Moqups", "Canva", "Wireframing"],
     visual: "wireframe",
+    image: podcastImage,
+    imageFit: "contain",
     featured: true,
   },
   {
@@ -169,6 +177,8 @@ export const projects: Project[] = [
       "Designed and developed a fully responsive personal website from scratch, handling layout, typography and responsive behaviour directly in HTML and CSS.",
     tools: ["HTML", "CSS", "Responsive Design"],
     visual: "website",
+    image: websiteImage,
+    imageFit: "contain",
   },
   {
     name: "I2C Business Report",
@@ -178,16 +188,10 @@ export const projects: Project[] = [
       "Prepared a comprehensive business analysis report using real firm data, structuring findings into a readable report for a non-technical audience.",
     tools: ["Business Analysis", "MS Excel", "Reporting"],
     visual: "research",
+    image: i2cImage,
+    imageFit: "contain",
   },
-  {
-    name: "Food Security Crisis Analysis",
-    category: "Global Issues Research",
-    year: "2024",
-    description:
-      "Analysed the root causes and global impacts of food insecurity, connecting economic, agricultural and policy factors into one argument.",
-    tools: ["Research & Analysis", "Economics", "Writing"],
-    visual: "research",
-  },
+ 
 ];
 
 export const skillGroups = [

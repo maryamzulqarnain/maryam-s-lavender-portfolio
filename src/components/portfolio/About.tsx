@@ -16,7 +16,7 @@ export function About() {
           {about.highlights.map((h) => (
             <li
               key={h.label}
-              className="rounded-2xl border border-border/70 bg-card p-5 shadow-soft"
+              className="card-hover rounded-2xl border border-border/70 bg-card p-5 shadow-soft"
             >
               <p className="font-display text-xl text-foreground sm:text-2xl">{h.value}</p>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{h.label}</p>

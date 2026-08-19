@@ -17,7 +17,7 @@ export function Experience() {
               aria-hidden="true"
               className="absolute -left-[1.85rem] top-7 h-3 w-3 rounded-full border-2 border-background bg-primary sm:-left-[2.85rem]"
             />
-            <article className="rounded-2xl border border-border/70 bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+            <article className="card-hover rounded-2xl border border-border/70 bg-card p-6 shadow-soft">
               <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-4">
                 <div className="min-w-0">
                   <h3 className="font-display text-lg text-foreground sm:text-xl">{item.role}</h3>
@@ -32,7 +32,7 @@ export function Experience() {
                 {item.skills.map((s) => (
                   <li
                     key={s}
-                    className="rounded-full border border-border bg-background px-3 py-1 text-xs text-muted-foreground"
+                    className="rounded-full border border-border bg-background px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-dusty-rose/40 hover:text-primary"
                   >
                     {s}
                   </li>

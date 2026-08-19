@@ -22,8 +22,9 @@ export function useReveal<T extends HTMLElement = HTMLDivElement>() {
       { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
     );
 
-    targets.forEach((t) => {
+    targets.forEach((t, index) => {
       t.classList.add("reveal");
+      t.style.transitionDelay = `${Math.min(index * 80, 480)}ms`;
       observer.observe(t);
     });
     return () => observer.disconnect();

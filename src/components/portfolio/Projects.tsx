@@ -29,13 +29,13 @@ function ProjectCard({ project }: { project: Project }) {
     <article
       data-reveal
       className={cn(
-        "group flex flex-col overflow-hidden rounded-3xl border border-border/70 bg-card shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift",
+        "card-hover group flex flex-col overflow-hidden rounded-3xl border border-border/70 bg-card shadow-soft",
         project.featured && "sm:col-span-2 sm:flex-row",
       )}
     >
       <div
         className={cn(
-          "relative aspect-[16/10] w-full shrink-0 overflow-hidden border-b border-border/60",
+          "relative aspect-[16/10] w-full shrink-0 overflow-hidden border-b border-border/60 bg-lavender-soft/50",
           project.featured && "sm:aspect-auto sm:w-[44%] sm:border-b-0 sm:border-r",
         )}
       >
@@ -56,7 +56,7 @@ function ProjectCard({ project }: { project: Project }) {
           {project.tools.map((tool) => (
             <li
               key={tool}
-              className="rounded-full border border-border bg-background px-3 py-1 text-xs text-muted-foreground"
+              className="rounded-full border border-border bg-background px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-dusty-rose/40 hover:text-primary"
             >
               {tool}
             </li>
@@ -68,7 +68,7 @@ function ProjectCard({ project }: { project: Project }) {
             href={project.link}
             target="_blank"
             rel="noreferrer"
-            className="mt-6 inline-flex items-center gap-2 self-start text-sm font-medium text-primary transition-colors hover:opacity-80"
+            className="button-hover mt-6 inline-flex items-center gap-2 self-start text-sm font-medium text-primary hover:text-dusty-rose"
           >
             View {project.name}
             <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

@@ -8,12 +8,14 @@ import type { Project } from "@/content/portfolio";
 export function ProjectVisual({ project }: { project: Project }) {
   if (project.image) {
     return (
-      <img
-        src={project.image}
-        alt={`${project.name} project preview`}
-        loading="lazy"
-        className="h-full w-full object-cover"
-      />
+      <div className="h-full w-full bg-white/70">
+        <img
+          src={project.image}
+          alt={`${project.name} project preview`}
+          loading="lazy"
+          className={project.imageFit === "contain" ? "h-full w-full object-contain p-6" : "h-full w-full object-cover"}
+        />
+      </div>
     );
   }
 

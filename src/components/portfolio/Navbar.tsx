@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { navLinks, profile } from "@/content/portfolio";
+import { DownloadCvLink } from "@/components/portfolio/DownloadCvLink";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -37,19 +38,15 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-primary"
+              className="nav-link text-sm text-muted-foreground transition-colors hover:text-primary"
             >
               {link.label}
             </a>
           ))}
-          <a
-            href={profile.cvUrl}
-            download
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-soft transition-all hover:-translate-y-0.5 hover:opacity-95"
-          >
-            <Download className="h-4 w-4" aria-hidden="true" />
-            Download CV
-          </a>
+          <DownloadCvLink
+            className="button-hover inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-soft"
+            label="Download CV"
+          />
         </div>
 
         <button
@@ -71,22 +68,18 @@ export function Navbar() {
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block border-b border-border/60 py-3 text-base text-foreground"
+                  className="block border-b border-border/60 py-3 text-base text-foreground transition-colors hover:text-primary"
                 >
                   {link.label}
                 </a>
               </li>
             ))}
           </ul>
-          <a
-            href={profile.cvUrl}
-            download
-            onClick={() => setOpen(false)}
-            className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-medium text-primary-foreground"
-          >
-            <Download className="h-4 w-4" aria-hidden="true" />
-            Download CV
-          </a>
+          <DownloadCvLink
+            className="button-hover mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-medium text-primary-foreground"
+            label="Download CV"
+            onDone={() => setOpen(false)}
+          />
         </div>
       )}
     </header>

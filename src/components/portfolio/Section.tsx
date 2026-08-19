@@ -22,11 +22,18 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "scroll-mt-24 px-5 py-20 sm:px-8 md:py-28",
+        "cosmic-surface scroll-mt-24 px-5 py-20 sm:px-8 md:py-28",
         tone === "soft" && "bg-lavender-soft",
         className,
       )}
     >
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+        <span className="absolute left-[8%] top-[12%] h-1 w-1 rounded-full bg-dusty-rose/25 animate-twinkle" />
+        <span className="absolute left-[22%] top-[26%] h-1.5 w-1.5 rounded-full bg-primary/20 animate-twinkle" style={{ animationDelay: "0.8s" }} />
+        <span className="absolute right-[20%] top-[18%] h-1 w-1 rounded-full bg-lavender/30 animate-twinkle" style={{ animationDelay: "1.6s" }} />
+        <span className="absolute right-[10%] top-[58%] h-1.5 w-1.5 rounded-full bg-dusty-rose/20 animate-twinkle" style={{ animationDelay: "2.4s" }} />
+        <span className="absolute left-[14%] bottom-[16%] h-1 w-1 rounded-full bg-primary/20 animate-twinkle" style={{ animationDelay: "3.1s" }} />
+      </div>
       <div className="mx-auto w-full max-w-6xl">
         {(eyebrow || title) && (
           <header className="max-w-2xl" data-reveal>

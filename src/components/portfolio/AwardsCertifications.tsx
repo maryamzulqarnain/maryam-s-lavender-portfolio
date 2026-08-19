@@ -18,7 +18,7 @@ export function AwardsCertifications() {
             {awards.map((item) => (
               <li
                 key={item.title}
-                className="flex items-start gap-4 rounded-2xl border border-border/70 bg-card p-5 shadow-soft transition-transform duration-300 hover:-translate-y-1"
+                className="card-hover flex items-start gap-4 rounded-2xl border border-border/70 bg-card p-5 shadow-soft"
               >
                 <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl gradient-accent text-primary-foreground">
                   <Award className="h-5 w-5" aria-hidden="true" />
@@ -41,7 +41,7 @@ export function AwardsCertifications() {
             {certifications.map((item) => (
               <li
                 key={item.title}
-                className="flex items-start gap-4 rounded-2xl border border-border/70 bg-card p-5 shadow-soft transition-transform duration-300 hover:-translate-y-1"
+                className="card-hover flex items-start gap-4 rounded-2xl border border-border/70 bg-card p-5 shadow-soft"
               >
                 <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
                   <BadgeCheck className="h-5 w-5" aria-hidden="true" />
