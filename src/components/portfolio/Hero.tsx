@@ -103,12 +103,6 @@ export function Hero() {
             value="Research Driven"
             delay="2.1s"
           />
-          <span
-            aria-hidden="true"
-            className="absolute -bottom-4 right-8 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-card text-primary shadow-soft animate-float"
-          >
-            <Sparkles className="h-5 w-5" />
-          </span>
         </div>
       </div>
     </section>
