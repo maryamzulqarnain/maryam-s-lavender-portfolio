@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles, LineChart, Search, Palette } from "lucide-react";
+import { ArrowRight, LineChart, Search, Palette } from "lucide-react";
 import heroArt from "@/assets/hero-abstract.jpg";
 import { profile } from "@/content/portfolio";
 import { DownloadCvLink } from "@/components/portfolio/DownloadCvLink";
@@ -91,7 +91,6 @@ export function Hero() {
           />
           <FloatingCard
             className="-bottom-4 right-10 sm:right-2"
-            icon={<Sparkles className="h-4 w-4" aria-hidden="true" />}
             label="Brand"
             value="Lavender Identity"
             delay="3.3s"
@@ -116,7 +115,7 @@ function FloatingCard({
   className,
   delay = "0s",
 }: {
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   label: string;
   value: string;
   className?: string;
@@ -127,9 +126,11 @@ function FloatingCard({
       style={{ animationDelay: delay }}
       className={`card-hover absolute hidden items-center gap-3 rounded-2xl border border-border/70 bg-card/95 px-4 py-3 shadow-soft backdrop-blur animate-float sm:flex ${className ?? ""}`}
     >
-      <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-secondary text-dusty-rose">
-        {icon}
-      </span>
+      {icon && (
+        <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-secondary text-dusty-rose">
+          {icon}
+        </span>
+      )}
       <span className="min-w-0">
         <span className="block text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground">
           {label}
