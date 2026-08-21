@@ -2,7 +2,7 @@
  * SINGLE SOURCE OF CONTENT FOR THE WHOLE SITE.
  * Edit anything here — no need to touch component files.
  */
-import cvAsset from "@/assets/cv.asset.json";
+import cvUrl from "@/assets/Maryam_Zulqarnain_CV1.pdf";
 import hirefastImage from "@/assets/hirefast.png";
 import i2cImage from "@/assets/i2c.png";
 import johnsonImage from "@/assets/Screenshot 2026-08-19 030426.png";
@@ -17,8 +17,7 @@ export const profile = {
   email: "maryamzulqarnain18@gmail.com",
   linkedin: "https://www.linkedin.com/in/maryam-zulqarnain-9880b8375",
   linkedinLabel: "linkedin.com/in/maryam-zulqarnain-9880b837",
-  // Replace this with your own CV: drop a PDF in /public and use "/my-cv.pdf".
-  cvUrl: cvAsset.url,
+  cvUrl,
   availability: "Open to Opportunities",
   tagline: "Business, Marketing & Strategy — with a creative edge.",
   heroIntro:
